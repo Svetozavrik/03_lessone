@@ -1,39 +1,15 @@
 from Address import Address
 from Mailing import Mailing
-
-from_addr = Address(
-    index="660000",
-    city="Krasnoyarsk",
-    street="Tchaikovsky",
-    house="11",
-    apartment="53"
-)
-
-to_addr = Address(
-    index="603000",
-    city="Mosсow",
-    street="Alexander Solzhenitsyn",
-    house="23A",
-    apartment="2"
-)
-
+from_addr = Address("123456", "Москва", "Тверская", "15", "123")
+to_addr = Address("654321", "Санкт-Петербург", "Невский проспект", "25", "45")
 
 mailing = Mailing(
     to_address=to_addr,
-    from_address=Mailing, 
+    from_address=from_addr,
     cost=500,
-    track="RU123456789RU"
+    track="123456789RU"
 )
-
-print(from_addr.index)
-print(from_addr.city)
-print(from_addr.street)
-print(from_addr.house)
-print(from_addr.apartment)
-print(to_addr.index)
-print(to_addr.city)
-print(to_addr.street)
-print(to_addr.house)
-print(to_addr.apartment)
-print(mailing.cost)
-print(mailing.track)
+print(f"Отправление{mailing.track} из {mailing.from_address.index}, {mailing.from_address.city}, "
+      f"{mailing.from_address.street}, {mailing.from_address.house} - {mailing.from_address.apartment} "
+      f"в {mailing.to_address.index}, {mailing.to_address.city}, {mailing.to_address.street}, "
+      f"{mailing.to_address.house} - {mailing.to_address.apartment}. Стоимость {mailing.cost} рублей.")
